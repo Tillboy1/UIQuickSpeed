@@ -15,6 +15,13 @@ public class AudioSettings : MonoBehaviour
 
     public void Start()
     {
+        //getting the text for the volumes
+        for (int i = 0; i < volumeTexts.Length; i++)
+        {
+            //Debug.Log(i + ", " + volumeTexts.Length);
+            volumeTexts[i] = this.transform.GetChild(3).GetChild(i).GetChild(2).transform.gameObject;
+        }
+
         //finds if there is a saved audio level turns the setting back before player goes into menu
         //also changes the UI (-80 + (PlayerPrefs.GetFloat("masterVol") * 10))
         if (PlayerPrefs.HasKey("masterVol")) { mixer.SetFloat("Master", (-80 + (PlayerPrefs.GetFloat("masterVol") * 10))); volumeTexts[0].GetComponent<TMP_Text>().text = PlayerPrefs.GetFloat("masterVol").ToString(); }
@@ -52,15 +59,9 @@ public class AudioSettings : MonoBehaviour
                     break;
             }
         }
-
-        //getting the text for the volumes
-        for (int i = 0; i < volumeTexts.Length; i++)
-        {
-            Debug.Log(i + ", " + volumeTexts.Length);
-            volumeTexts[i] = this.transform.GetChild(3).GetChild(i).GetChild(2).transform.gameObject;
-        }
     }
 
+    #region volume settings
     public void MainVolume(float volume)
     {
         mixer.SetFloat("Master", (-80 + (volume * 10)));
@@ -96,6 +97,7 @@ public class AudioSettings : MonoBehaviour
         PlayerPrefs.Save();
         volumeTexts[4].GetComponent<TMP_Text>().text = volume.ToString();
     }
+    #endregion
 
     public void SubtitlesOnOff(int dropInput)
     {
