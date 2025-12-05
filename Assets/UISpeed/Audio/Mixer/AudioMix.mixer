@@ -47,6 +47,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &-2204004826379985439
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 0a52fd21af3b481459a66e16df36e6d9
+  m_EffectName: Attenuation
+  m_MixLevel: 4da3d4b02cbac364d81d8afab7718480
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -65,18 +79,21 @@ AudioMixerController:
   m_ExposedParameters:
   - guid: b190fe7843072574f9e442b7fc91c0a2
     name: Master
+  - guid: bdd632afe321d9d44a373a432704b6f1
+    name: Menu
   - guid: 9f94cda7c238e544bab870650ef09e16
     name: Music
   - guid: a1e9791c6dd42e542a725fedad24f972
-    name: VFX
+    name: SFX
   - guid: 1b6e6a84f38cce3438f2b2e26e61d014
-    name: Talking
+    name: Dialogue
   m_AudioMixerGroupViews:
   - guids:
     - 81e11faa039c8554d897229d98a42a34
     - 6df8db8e34d5f3a448fb23e3addb17a6
     - fcaaeb120ad93cf4080def37e5c764c6
     - cd3ef41369985be47bee8c703946d49f
+    - daa371fd1f20218419e05cc789bf3e06
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -91,8 +108,9 @@ AudioMixerGroupController:
   m_GroupID: 81e11faa039c8554d897229d98a42a34
   m_Children:
   - {fileID: -3281912911407377040}
-  - {fileID: 6065942485777935696}
   - {fileID: 6033964710756598510}
+  - {fileID: 6065942485777935696}
+  - {fileID: 7217172303622142687}
   m_Volume: b190fe7843072574f9e442b7fc91c0a2
   m_Pitch: 4d06d6f15883392498a811fea4a78bf4
   m_Send: 00000000000000000000000000000000
@@ -175,6 +193,25 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 5602629176072683015}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &7217172303622142687
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Menu
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: daa371fd1f20218419e05cc789bf3e06
+  m_Children: []
+  m_Volume: bdd632afe321d9d44a373a432704b6f1
+  m_Pitch: ff9b4545606534c4d8fb2c218b3a37b3
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -2204004826379985439}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
