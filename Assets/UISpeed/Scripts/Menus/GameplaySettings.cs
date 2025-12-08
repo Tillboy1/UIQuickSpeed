@@ -27,7 +27,11 @@ public class GameplaySettings : MonoBehaviour
     public bool tutorialAssist;
     public bool weaponSheathing;
 
-    #region
+    #region Gameplay
+    /// <summary>
+    /// Changes the variable of difficulty
+    /// </summary>
+    /// <param name="dropInput">int changes level of difficulty including 0-3</param>
     public void SetDifficulty(int dropInput)
     {
         switch (dropInput)
@@ -211,22 +215,4 @@ public class GameplaySettings : MonoBehaviour
         }
     }
     #endregion
-    /*
-    public void SetDifficulty(int dropInput)
-    {
-        switch (dropInput)
-        {
-            case 0:
-                difficulty = difficultyEasySet;
-                PlayerPrefs.SetFloat("difficultyFloat", dropInput);
-                PlayerPrefs.Save();
-                break;
-            default:
-                difficulty = dropInput;
-                PlayerPrefs.SetFloat("difficultyFloat", dropInput);
-                PlayerPrefs.Save();
-                break;
-        }
-    }
-    */
 }
