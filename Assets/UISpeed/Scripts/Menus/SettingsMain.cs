@@ -9,10 +9,11 @@ public class SettingsMain : MonoBehaviour
 {
     public GameObject[] screensHolder = new GameObject[9];
 
-    public KeyCode[] keycodes;
+    public KeyCode[] keycodes = new KeyCode[12];
     string TempString;
     bool WaitingForEvent;
     KeyCode newKey;
+    Event KeyEvent;
 
     void Start()
     {
@@ -63,41 +64,40 @@ public class SettingsMain : MonoBehaviour
                 keycodes[0] = newKey;
                 break;
             case "Inventory":
-                keycodes[0] = newKey;
+                keycodes[1] = newKey;
                 break;
             case "QuickSlots":
-                keycodes[0] = newKey;
+                keycodes[2] = newKey;
                 break;
             case "CloseScreens":
-                keycodes[0] = newKey;
+                keycodes[3] = newKey;
                 break;
             case "OpenMenu":
-                keycodes[0] = newKey;
+                keycodes[4] = newKey;
                 break;
             case "Interact":
-                keycodes[0] = newKey;
+                keycodes[5] = newKey;
                 break;
             case "Pickup":
-                keycodes[0] = newKey;
+                keycodes[6] = newKey;
                 break;
             case "Jump":
-                keycodes[0] = newKey;
+                keycodes[7] = newKey;
                 break;
             case "Sprint":
-                keycodes[0] = newKey;
+                keycodes[8] = newKey;
                 break;
             case "Crouch":
-                keycodes[0] = newKey;
+                keycodes[9] = newKey;
                 break;
             case "Voice":
-                keycodes[0] = newKey;
+                keycodes[10] = newKey;
                 break;
             case "Lying":
-                keycodes[0] = newKey;
+                keycodes[11] = newKey;
                 break;
         }
         
-
         KeyBindLoad();
     }
 
@@ -121,36 +121,22 @@ public class SettingsMain : MonoBehaviour
         #endregion
     }
 
-    /*
     private void OnGUI()
     {
         KeyEvent = Event.current;
 
         if (KeyEvent.isKey && WaitingForEvent)
         {
-            newKey = KeyEvent.keyCode;
+            if(KeyEvent.keyCode == KeyCode.Escape)
+            {
+                newKey = KeyCode.None;
+            }
+            else
+            {
+                newKey = KeyEvent.keyCode;
+            }
             WaitingForEvent = false;
             Keychange();
         }
-    }
-    */
-    public enum KeybindUse
-    {
-        Sprint,
-        Crouch,
-        Jump,
-
-        Voice,
-        Lying,
-
-        CloseScreens,
-        OpenMenu,
-
-        CharacterSheet,
-        Inventory,
-        QuickSlots,
-
-        Interact,
-        Pickup,
     }
 }
