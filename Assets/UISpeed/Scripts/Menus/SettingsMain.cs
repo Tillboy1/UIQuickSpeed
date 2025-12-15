@@ -4,6 +4,10 @@ using UnityEngine.Rendering;
 using Unity.VisualScripting;
 using System.Linq;
 using UnityEngine.UIElements;
+using System.Collections.Generic;
+using UnityEngine.Audio;
+using TMPro;
+using UnityEngine.UI;
 
 public class SettingsMain : MonoBehaviour
 {
@@ -15,19 +19,54 @@ public class SettingsMain : MonoBehaviour
     KeyCode newKey;
     Event KeyEvent;
 
+    Dropdown resalutionDropdown;
+    Resolution[] resolutions;
+
     void Start()
     {
-
         for (int i = 0; i < transform.Find("Screens").childCount; i++)
         {
             screensHolder[i] = transform.Find("Screens").GetChild(i).gameObject;
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  Display
+
+    public void setResolution(int resolutionIndex)
     {
-        
+        Resolution resolution = resolutions[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+    public void SetQuality(int qualityIndex)
+    {
+        QualitySettings.SetQualityLevel(qualityIndex);
+    }
+
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  Audio
+
+    public void SetFullScreen()
+    {
+        if (Screen.fullScreen)
+        {
+            Screen.fullScreen = false;
+        }
+        else
+        {
+            Screen.fullScreen = true;
+        }
+    }
+
+
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Sensitivity
+
+    public void SetYSensvalue(float Ysens)
+    {
+        PlayerPrefs.SetFloat("YSens", Ysens);
+    }
+
+    public void SetXSensvalue(float Xsens)
+    {
+        PlayerPrefs.SetFloat("XSens", Xsens);
     }
 
     public void CloseScreens()
