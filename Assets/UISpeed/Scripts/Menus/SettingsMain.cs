@@ -30,45 +30,6 @@ public class SettingsMain : MonoBehaviour
         }
     }
 
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  Display
-
-    public void setResolution(int resolutionIndex)
-    {
-        Resolution resolution = resolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-    }
-    public void SetQuality(int qualityIndex)
-    {
-        QualitySettings.SetQualityLevel(qualityIndex);
-    }
-
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  Audio
-
-    public void SetFullScreen()
-    {
-        if (Screen.fullScreen)
-        {
-            Screen.fullScreen = false;
-        }
-        else
-        {
-            Screen.fullScreen = true;
-        }
-    }
-
-
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Sensitivity
-
-    public void SetYSensvalue(float Ysens)
-    {
-        PlayerPrefs.SetFloat("YSens", Ysens);
-    }
-
-    public void SetXSensvalue(float Xsens)
-    {
-        PlayerPrefs.SetFloat("XSens", Xsens);
-    }
-
     public void CloseScreens()
     {
         for (int i = 0; i < 9; i++)

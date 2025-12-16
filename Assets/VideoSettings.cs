@@ -1,17 +1,23 @@
-using UnityEngine;
-using UnityEngine.Rendering.Universal;
-using UnityEngine.Rendering;
-using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class VideoSettings : MonoBehaviour
 {
-    public Dropdown resalutionDropdown;
+    public TMP_Dropdown resalutionDropdown;
     public Resolution[] resolutions;
 
+    //Settings saved 
+    float SenseX;
+    float SenseY;
 
     void Start()
     {
+        // Finds all possible Resalutions and adds them to a list to use later
         resolutions = Screen.resolutions;
         resalutionDropdown.ClearOptions();
         List<string> options = new List<string>();
@@ -24,10 +30,12 @@ public class VideoSettings : MonoBehaviour
 
             if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
             {
+                //Finds the used Resalution and applies it to the game
                 currentResolutionIndex = i;
             }
         }
 
+        // Adds all possible resalutions to dropdown and makes UI detect what is being used
         resalutionDropdown.AddOptions(options);
         resalutionDropdown.value = currentResolutionIndex;
         resalutionDropdown.RefreshShownValue();
@@ -45,7 +53,19 @@ public class VideoSettings : MonoBehaviour
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  Audio
+
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  Display
+
+    public void MotionBlur(float Value)
+    {
+        PlayerPrefs.SetFloat("MBlur", Value);
+    }
+    public void FilmGrain(float Value)
+    {
+        PlayerPrefs.SetFloat("FGrain", Value);
+    }
+
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  Window Size
 
     public void SetFullScreen()
     {
@@ -61,21 +81,18 @@ public class VideoSettings : MonoBehaviour
 
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Sensitivity
-
+    public void SetXSensvalue(float Xsens)
+    {
+        SenseX = Xsens;
+        PlayerPrefs.SetFloat("XSens", Xsens);
+    }
     public void SetYSensvalue(float Ysens)
     {
+        SenseY = Ysens;
         PlayerPrefs.SetFloat("YSens", Ysens);
     }
 
-    public void SetXSensvalue(float Xsens)
-    {
-        PlayerPrefs.SetFloat("XSens", Xsens);
-    }
-
-    public void ChangeVisualSettings(int settinglevel)
-    {
-        QualitySettings.SetQualityLevel(settinglevel);
-    }
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Render Scale
     public void ChangeRenderScale(float scale)
     {
         UniversalRenderPipelineAsset pipeline = GraphicsSettings.currentRenderPipeline as UniversalRenderPipelineAsset;
