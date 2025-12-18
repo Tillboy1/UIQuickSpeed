@@ -1,4 +1,7 @@
+using UnityEditor.Localization.Editor;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 public class LanguageSettings : MonoBehaviour
 {
@@ -28,6 +31,7 @@ public class LanguageSettings : MonoBehaviour
         else
         {
             //choose language chosen
+            LocalizationSettings.
         }
     }
 
