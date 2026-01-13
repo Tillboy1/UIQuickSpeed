@@ -31,7 +31,7 @@ public class LanguageSettings : MonoBehaviour
         else
         {
             //choose language chosen
-            LocalizationSettings.
+            //LocalizationSettings.
         }
     }
 

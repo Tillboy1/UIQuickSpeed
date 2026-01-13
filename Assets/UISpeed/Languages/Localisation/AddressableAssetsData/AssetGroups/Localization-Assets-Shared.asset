@@ -15,8 +15,38 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_GUID: bbaffeec2aa42a642b28e54ad97b7bdc
   m_SerializeEntries:
+  - m_GUID: 07467763322f754449983bdc0362b27c
+    m_Address: Assets/GameplayScreen Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0db609d6eab811b489487ab53ff7f020
+    m_Address: Assets/Music_Screen Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 15301bf6d39fce644af814d69d8ca9ac
     m_Address: Assets/FlagRepresentation Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 39f7281b7cac9cb4bac50b33b7341b58
+    m_Address: Assets/Camera_TEXT Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4cd9deb77c31cf34fadd0242395cd482
+    m_Address: Assets/HUD_Screen Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4f1eda04a2bbe144aad804fe79d9715e
+    m_Address: Assets/Video_Text Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a686f6ef468d1b44f971b7d80e676193
+    m_Address: Assets/Accessibility_Text Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

@@ -10,48 +10,48 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: GameplayText_fr-FR
+  m_Name: Camera_TEXT_fr-FR
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: fr-FR
-  m_SharedData: {fileID: 11400000, guid: a71030218b0971b4d915ca24d17725f3, type: 2}
+  m_SharedData: {fileID: 11400000, guid: 39f7281b7cac9cb4bac50b33b7341b58, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 458567213056
-    m_Localized: jeu
+  - m_Id: 104994906112
+    m_Localized: Vitesse de rotation horizontale
     m_Metadata:
       m_Items: []
-  - m_Id: 1128821186560
-    m_Localized: HUD
+  - m_Id: 181591285760
+    m_Localized: Vitesse de rotation verticale
     m_Metadata:
       m_Items: []
-  - m_Id: 1382090039296
-    m_Localized: "cam\xE9ra"
+  - m_Id: 252550520832
+    m_Localized: "Inverser le contr\xF4le horizontal"
     m_Metadata:
       m_Items: []
-  - m_Id: 4026200252416
-    m_Localized: son
+  - m_Id: 335144755200
+    m_Localized: "Inverser le contr\xF4le vertical"
     m_Metadata:
       m_Items: []
-  - m_Id: 4384821633024
-    m_Localized: "Vid\xE9o"
+  - m_Id: 406523420672
+    m_Localized: "Balancement ambiant de la cam\xE9ra"
     m_Metadata:
       m_Items: []
-  - m_Id: 4632352677888
-    m_Localized: "Accessibilit\xE9"
+  - m_Id: 484554252288
+    m_Localized: "Aide \xE0 la vis\xE9e"
     m_Metadata:
       m_Items: []
-  - m_Id: 4838074900480
-    m_Localized: Langue
+  - m_Id: 623398297600
+    m_Localized: "Recentrage de la cam\xE9ra en mode attaque"
     m_Metadata:
       m_Items: []
-  - m_Id: 5102819368960
-    m_Localized: "afficher les contr\xF4les"
+  - m_Id: 1631759310848
+    m_Localized: "CAM\xC9RA DE VIS\xC9E"
     m_Metadata:
       m_Items: []
-  - m_Id: 5034636763136
-    m_Localized: "cr\xE9dits"
+  - m_Id: 2178075795456
+    m_Localized: "CAM\xC9RA DE COMBAT"
     m_Metadata:
       m_Items: []
   references:

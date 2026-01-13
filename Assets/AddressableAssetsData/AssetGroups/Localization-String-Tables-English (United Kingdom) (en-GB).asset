@@ -15,8 +15,44 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-English (United Kingdom) (en-GB)
   m_GUID: bddc0b252e0d5f24384debcd8a1e9538
   m_SerializeEntries:
+  - m_GUID: 0d2e33634148e7d41b30b6cc8254c8a9
+    m_Address: Music_Text_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3f5989b24ff30f948a871c1ad188e9c7
+    m_Address: Accessibility_Text_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 510a21217f531664ba40d81b3ab8591d
+    m_Address: GameplayScreen_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 834190b4c8d029c499d266466710dd5f
+    m_Address: Camera_TEXT_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9930d287420149a4c86a14828df53893
-    m_Address: GameplayText_en-GB
+    m_Address: ButtonsTEXT_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f781d770379b35b42b627d25f548b066
+    m_Address: Video_Text_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ff21d89007226e745afd6e47ac335122
+    m_Address: HUD_Screen_en-GB
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-GB
