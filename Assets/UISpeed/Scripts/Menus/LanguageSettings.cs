@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEditor.Localization.Editor;
 using UnityEngine;
 using UnityEngine.Localization;
@@ -23,10 +24,6 @@ public class LanguageSettings : MonoBehaviour
                     chosenLanguage = SystemLanguage.French;
                     break;
             }
-            if (Application.systemLanguage == SystemLanguage.English)
-            {
-
-            }
         }
         else
         {
@@ -35,22 +32,23 @@ public class LanguageSettings : MonoBehaviour
         }
     }
 
-    public void LanguageChooser(int dropInput)
+    private bool ActiveLANGUAGEChange = false;
+    public void LanguageChange(int dropInput)
     {
-        switch (dropInput)
-        {
-            case 0:
-                PlayerPrefs.SetFloat("LanguageChosen", dropInput);
-                PlayerPrefs.Save();
-                break;
-            case 1:
-                PlayerPrefs.SetFloat("LanguageChosen", dropInput);
-                PlayerPrefs.Save();
-                break;
-            case 2:
-                PlayerPrefs.SetFloat("LanguageChosen", dropInput);
-                PlayerPrefs.Save();
-                break;
-        }
+        if (ActiveLANGUAGEChange)
+            return;
+        StartCoroutine(SetLocale(dropInput));
+    }
+
+    IEnumerator SetLocale(int _LocaleID)
+    {
+        ActiveLANGUAGEChange = true;
+        yield return LocalizationSettings.InitializationOperation;
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[_LocaleID];
+
+        PlayerPrefs.SetFloat("LanguageChosen", _LocaleID);
+        PlayerPrefs.Save();
+
+        ActiveLANGUAGEChange = false;
     }
 }

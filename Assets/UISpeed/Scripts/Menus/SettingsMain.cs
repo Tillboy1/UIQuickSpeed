@@ -12,9 +12,9 @@ using UnityEngine.UI;
 public class SettingsMain : MonoBehaviour
 {
     public GameObject[] screensHolder = new GameObject[9];
+    string TempString;
 
     public KeyCode[] keycodes = new KeyCode[12];
-    string TempString;
     bool WaitingForEvent;
     KeyCode newKey;
     Event KeyEvent;
