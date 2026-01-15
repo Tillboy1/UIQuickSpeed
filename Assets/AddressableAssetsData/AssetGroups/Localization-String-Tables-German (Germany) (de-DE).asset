@@ -45,6 +45,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-de-DE
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a56d16ab40ca5a74d97d4ae294da95a6
+    m_Address: Language_Text_de-DE
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-de-DE
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dbd0bef7fe9ef404b80115f09e521fce
     m_Address: ButtonsTEXT_de-DE
     m_ReadOnly: 1

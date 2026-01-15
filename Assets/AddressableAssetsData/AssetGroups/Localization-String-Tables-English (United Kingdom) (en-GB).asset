@@ -27,6 +27,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-GB
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 406335c1e1c503a4dbab3b8dbd4e4145
+    m_Address: Language_Text_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 510a21217f531664ba40d81b3ab8591d
     m_Address: GameplayScreen_en-GB
     m_ReadOnly: 1
