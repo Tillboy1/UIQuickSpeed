@@ -1,5 +1,6 @@
-using JetBrains.Annotations;
+
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
@@ -10,31 +11,44 @@ public class MainMenu : MonoBehaviour
     public GameObject BTNSettings => this.transform.GetChild(0).gameObject.transform.GetChild(2).gameObject;
     public GameObject BTNQuit => this.transform.GetChild(0).gameObject.transform.GetChild(3).gameObject;
 
+    public GameObject[] seperateScreens;
+
+    
+
     //
+    [Header("Savefile")]
+    [Tooltip("the number of the file able to be open")]
+    static int SaveSlotChoosen;
+    public GameObject[] FileBTN;
 
     #endregion
 
-    void Start()
+    public void Save()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        SaveSystem.Save();
     }
 
     public void NewGame()
     {
         Debug.Log("Creating Game File");
     }
+    public void ChooseFile(int selected)
+    {
+        for (int i = 0; i < FileBTN.Length; i++)
+        {
+            FileBTN[i].GetComponent<Image>().color = new Color(1, 1, 1);
+        }
+        FileBTN[selected].GetComponent<Image>().color = new Color(0, 1, 0);
+
+        SaveSlotChoosen = selected;
+    }
     public void LoadGame()
     {
         Debug.Log("Load Game");
     }
-    public void Options()
+    public void RemoveSave()
     {
-
+        Debug.Log("removed data for " + SaveSlotChoosen);
     }
     public void QuitGame()
     {

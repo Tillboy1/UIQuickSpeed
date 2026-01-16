@@ -3,19 +3,18 @@ using UnityEngine;
 public class CameraOptions : MonoBehaviour
 {
     [Header("Camera")]
-    float horizontalRotateSpeed;
-    float verticalRotateSpeed;
-    bool invertHorizontalRotate = false, invertVerticalRotate = false;
-    float ambiantCameraSway;
+    public float horizontalRotateSpeed;
+    public float verticalRotateSpeed;
+    public bool invertHorizontalRotate = false, invertVerticalRotate = false;
 
     [Header("Aim Camera")]
-    float aimHorizontalRotateSpeed;
-    float aimVerticalRotateSpeed;
-    bool aimAssist;
+    public float aimHorizontalRotateSpeed;
+    public float aimVerticalRotateSpeed;
+    public bool aimAssist;
 
     [Header("Combat Camera")]
-    bool recenterCamOnAttack;
-    bool strafeAssist;
+    public bool recenterCamOnAttack;
+    public bool strafeAssist;
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Sensitivity
     public void SetXSensvalue(float Xsens)

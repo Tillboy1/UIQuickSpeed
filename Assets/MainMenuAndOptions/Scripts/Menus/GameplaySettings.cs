@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class GameplaySettings : MonoBehaviour
 {
@@ -14,14 +13,12 @@ public class GameplaySettings : MonoBehaviour
     public float puzzleTiming;
     public int lockOnCamera;
     public int resetCameraOnAttack;
-    public bool strafeAssist;
 
     [Header("PlayStyle")]
     public int autoPickUp;
     public int menuHolders;
     public int mini_GameStyle;
     public bool navigationAssist;
-    public bool RepeatedButtonPresses;
     public bool SkillsNavigation;
     public int traversalAssist;
     public bool tutorialAssist;
@@ -92,22 +89,6 @@ public class GameplaySettings : MonoBehaviour
         PlayerPrefs.SetInt("resetCamOnAttackInt", dropInput);
         PlayerPrefs.Save();
     }
-    public void SetStrafeAssist(int dropInput)
-    {
-        switch (dropInput)
-        {
-            case 0:
-                strafeAssist = false;
-                PlayerPrefs.SetFloat("strafeAssistBool", dropInput);
-                PlayerPrefs.Save();
-                break;
-            default:
-                strafeAssist = true;
-                PlayerPrefs.SetFloat("strafeAssistBool", dropInput);
-                PlayerPrefs.Save();
-                break;
-        }
-    }
     #endregion
     #region
     public void SetAutoPickup(int dropInput)
@@ -140,22 +121,6 @@ public class GameplaySettings : MonoBehaviour
             default:
                 navigationAssist = true;
                 PlayerPrefs.SetFloat("strafeAssistBool", dropInput);
-                PlayerPrefs.Save();
-                break;
-        }
-    }
-    public void SetRepeatedButtonPress(int dropInput)
-    {
-        switch (dropInput)
-        {
-            case 0:
-                RepeatedButtonPresses = false;
-                PlayerPrefs.SetFloat("repeatedButtonPressBool", dropInput);
-                PlayerPrefs.Save();
-                break;
-            default:
-                RepeatedButtonPresses = true;
-                PlayerPrefs.SetFloat("repeatedButtonPressBool", dropInput);
                 PlayerPrefs.Save();
                 break;
         }

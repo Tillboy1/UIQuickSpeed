@@ -1,10 +1,8 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
-using UnityEngine.UI;
 
 public class VideoSettings : MonoBehaviour
 {
@@ -16,6 +14,7 @@ public class VideoSettings : MonoBehaviour
     public float motionBlur;
 
     public Vector2 CanvasSize;
+    public bool fullscreen;
 
     void Start()
     {
@@ -78,10 +77,12 @@ public class VideoSettings : MonoBehaviour
         if (Screen.fullScreen)
         {
             Screen.fullScreen = false;
+            fullscreen = false;
         }
         else
         {
             Screen.fullScreen = true;
+            fullscreen = true;
         }
     }
 

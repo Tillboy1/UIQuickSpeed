@@ -5,6 +5,7 @@ using UnityEngine.Rendering;
 public class SettingsMain : MonoBehaviour
 {
     static SettingsMain instance;
+    public GameObject mainMenuScreen;
 
     public GameObject[] screensHolder = new GameObject[9];
 
@@ -13,6 +14,15 @@ public class SettingsMain : MonoBehaviour
         for (int i = 0; i < transform.Find("Screens").childCount; i++)
         {
             screensHolder[i] = transform.Find("Screens").GetChild(i).gameObject;
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            mainMenuScreen.gameObject.SetActive(true);
+            this.gameObject.SetActive(false);
         }
     }
 

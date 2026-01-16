@@ -1,12 +1,11 @@
 using System.Collections;
-using UnityEditor.Localization.Editor;
 using UnityEngine;
-using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 
 public class LanguageSettings : MonoBehaviour
 {
     public SystemLanguage chosenLanguage;
+    public bool UsingSubtitles;
 
     void Start()
     {
