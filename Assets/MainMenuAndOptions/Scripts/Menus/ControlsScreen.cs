@@ -1,53 +1,37 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
-using Unity.VisualScripting;
-using System.Linq;
-using UnityEngine.UIElements;
-using System.Collections.Generic;
-using UnityEngine.Audio;
 using TMPro;
-using UnityEngine.UI;
 
-public class SettingsMain : MonoBehaviour
+public class ControlsScreen : MonoBehaviour
 {
-    public GameObject[] screensHolder = new GameObject[9];
     string TempString;
 
+    [Tooltip("place to save Current keybinds")]
+    public Transform Controls_Holdler;
+    public GameObject[] controltexts;
     public KeyCode[] keycodes = new KeyCode[12];
     bool WaitingForEvent;
     KeyCode newKey;
     Event KeyEvent;
 
-    Dropdown resalutionDropdown;
-    Resolution[] resolutions;
-
-    void Start()
+    public void Awake()
     {
-        for (int i = 0; i < transform.Find("Screens").childCount; i++)
+        controltexts = new GameObject[keycodes.Length];
+        int TempCount = 0;
+
+        foreach (Transform child in Controls_Holdler)
         {
-            screensHolder[i] = transform.Find("Screens").GetChild(i).gameObject;
+            controltexts[TempCount] = child.gameObject.transform.GetChild(1).GetChild(0).gameObject;
+            TempCount++;
+        }
+
+        for (int i = 0; i < controltexts.Length; i++)
+        {
+            controltexts[i].GetComponent<TMP_Text>().text = keycodes[i].ToString();
         }
     }
-
-    public void CloseScreens()
-    {
-        for (int i = 0; i < 9; i++)
-        {
-            screensHolder[i].gameObject.SetActive(false);
-        }
-    }
-
-    public void ChangeVisualSettings(int settinglevel)
-    {
-        QualitySettings.SetQualityLevel(settinglevel);
-    }
-    public void ChangeRenderScale(float scale)
-    {
-        UniversalRenderPipelineAsset pipeline = GraphicsSettings.currentRenderPipeline as UniversalRenderPipelineAsset;
-    }
-
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  KeyBinds Changing
 
     public void ChangeKeybinds(string UseName)
     {
@@ -56,54 +40,62 @@ public class SettingsMain : MonoBehaviour
         TempString = UseName;
     }
 
-    public void Keychange()
+    private void Keychange()
     {
         switch (TempString)
         {
-            case "CharacterSheet":
+            case "Move Forward":
                 keycodes[0] = newKey;
                 break;
-            case "Inventory":
+            case "Move Left":
                 keycodes[1] = newKey;
                 break;
-            case "QuickSlots":
+            case "Move Backwards":
                 keycodes[2] = newKey;
                 break;
-            case "CloseScreens":
+            case "Move Right":
                 keycodes[3] = newKey;
                 break;
-            case "OpenMenu":
+            case "Melee Attack":
                 keycodes[4] = newKey;
                 break;
-            case "Interact":
+            case "Ranged Attack":
                 keycodes[5] = newKey;
                 break;
-            case "Pickup":
+            case "Interact":
                 keycodes[6] = newKey;
                 break;
-            case "Jump":
+            case "Pickup":
                 keycodes[7] = newKey;
                 break;
-            case "Sprint":
+            case "Jump":
                 keycodes[8] = newKey;
                 break;
             case "Crouch":
                 keycodes[9] = newKey;
                 break;
-            case "Voice":
+            case "Sprint":
                 keycodes[10] = newKey;
                 break;
-            case "Lying":
+            case "Inventory":
                 keycodes[11] = newKey;
                 break;
         }
-        
+
         KeyBindLoad();
     }
 
+    /// <summary>
+    /// changes the text on the button UI to show the current key to click to do the stated activity
+    /// </summary>
     public void KeyBindLoad() // changes UI TEXT
     {
         //Transform KeybindsScreen = this.transform.GetChild(1).transform.GetChild(3).transform.GetChild(1).transform;
+
+        for (int i = 0; i < controltexts.Length; i++)
+        {
+            controltexts[i].GetComponent<TMP_Text>().text = keycodes[i].ToString();
+        }
 
         #region KeyToText
         //KeybindList[0].transform.GetChild(0).GetComponent<Text>().text = Player.GetComponent<PlayerMovement>().jumpkey.ToString();
@@ -121,13 +113,17 @@ public class SettingsMain : MonoBehaviour
         #endregion
     }
 
+
+    /// <summary>
+    /// Finds the a event of any key being pressed if the button is pressed and removes the all keys to a selected button if it clicks the escape key so it is saved only for going to menu
+    /// </summary>
     private void OnGUI()
     {
         KeyEvent = Event.current;
 
         if (KeyEvent.isKey && WaitingForEvent)
         {
-            if(KeyEvent.keyCode == KeyCode.Escape)
+            if (KeyEvent.keyCode == KeyCode.Escape)
             {
                 newKey = KeyCode.None;
             }

@@ -12,8 +12,10 @@ public class VideoSettings : MonoBehaviour
     public Resolution[] resolutions;
 
     //Settings saved 
-    float SenseX;
-    float SenseY;
+    public float filmGrain;
+    public float motionBlur;
+
+    public Vector2 CanvasSize;
 
     void Start()
     {
@@ -64,6 +66,10 @@ public class VideoSettings : MonoBehaviour
     {
         PlayerPrefs.SetFloat("FGrain", Value);
     }
+    public void ChangeVisualSettings(int settinglevel)
+    {
+        QualitySettings.SetQualityLevel(settinglevel);
+    }
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  Window Size
 
@@ -79,22 +85,14 @@ public class VideoSettings : MonoBehaviour
         }
     }
 
-
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Sensitivity
-    public void SetXSensvalue(float Xsens)
-    {
-        SenseX = Xsens;
-        PlayerPrefs.SetFloat("XSens", Xsens);
-    }
-    public void SetYSensvalue(float Ysens)
-    {
-        SenseY = Ysens;
-        PlayerPrefs.SetFloat("YSens", Ysens);
-    }
-
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Render Scale
     public void ChangeRenderScale(float scale)
     {
         UniversalRenderPipelineAsset pipeline = GraphicsSettings.currentRenderPipeline as UniversalRenderPipelineAsset;
     }
+
+
+
+
+    
 }
